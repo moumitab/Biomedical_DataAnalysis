@@ -1,0 +1,21 @@
+digraph Tree {
+node [shape=box] ;
+0 [label="LengthOfStayHours <= 14.55\ngini = 0.734\nsamples = 67282\nvalue = [22928, 22623, 4845, 7883, 9003]"] ;
+1 [label="LengthOfStayHours <= 8.85\ngini = 0.374\nsamples = 28988\nvalue = [460, 22266, 667, 154, 5441]"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="LengthOfStayHours <= 6.15\ngini = 0.2742\nsamples = 24291\nvalue = [259, 20453, 343, 112, 3124]"] ;
+1 -> 2 ;
+3 [label="gini = 0.2182\nsamples = 18949\nvalue = [191, 16654, 227, 70, 1807]"] ;
+2 -> 3 ;
+4 [label="gini = 0.4328\nsamples = 5342\nvalue = [68, 3799, 116, 42, 1317]"] ;
+2 -> 4 ;
+5 [label="gini = 0.601\nsamples = 4697\nvalue = [201, 1813, 324, 42, 2317]"] ;
+1 -> 5 ;
+6 [label="LengthOfStayHours <= 38.75\ngini = 0.5944\nsamples = 38294\nvalue = [22468, 357, 4178, 7729, 3562]"] ;
+0 -> 6 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+7 [label="gini = 0.7438\nsamples = 9473\nvalue = [2491, 328, 2340, 1182, 3132]"] ;
+6 -> 7 ;
+8 [label="LengthOfStayHours <= 63.55\ngini = 0.4637\nsamples = 28821\nvalue = [19977, 29, 1838, 6547, 430]"] ;
+6 -> 8 ;
+9 [label="gini = 0.5858\nsamples = 6525\nvalue = [3845, 22, 1202, 1144, 312]"] ;
+8 -> 9 ;
