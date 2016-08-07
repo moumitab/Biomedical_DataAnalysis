@@ -5,7 +5,9 @@ import numpy as np
 
 def getData():
     #conditionVec =  'C:\\Users\\Moumita\\Dropbox\\Research_Phase2\\conditions_clustering_analysis\\Condtions_Vectors_Hoss_Input.csv'
-    conditionVec = 'C:\\Users\\Moumita\\Dropbox\\Transcript_RNA\\CAPNS1_tissue_normalizeddata_2.csv'
+
+    conditionVec = '/Users/moumitabhattacharya/Google Drive/Research_Phase2/conditions_clustering_analysis/Office_Condition/OfficeConditionOutputVec.csv'
+    #conditionVec = 'C:\\Users\\Moumita\\Dropbox\\Transcript_RNA\\CAPNS1_tissue_normalizeddata_2.csv'
     df = pd.read_csv(conditionVec)
     data = df.as_matrix()
     data = np.transpose(data)
@@ -52,7 +54,7 @@ def cosine(u, v):
 
 
 data = getData()
-similarityMatrix = np.zeros((18, 18))
+similarityMatrix = np.zeros((179, 179))
 
 print data[0,:]
 print len(data[0,:])
@@ -80,7 +82,7 @@ print("similarityMatrix.shape",similarityMatrix.shape)
 
 import csv
 
-with open('C:\\Users\\Moumita\\Dropbox\\Transcript_RNA\\CAPNS1_tissue_cosineSimilarity.csv','w') as csvoutput:
+with open('/Users/moumitabhattacharya/Google Drive/Research_Phase2/conditions_clustering_analysis/Office_Condition/ofc_179_code_cosineSimilarity.csv','w') as csvoutput:
     for i in range(len(similarityMatrix)):
         writer = csv.writer(csvoutput)
         writer.writerow(similarityMatrix[i])

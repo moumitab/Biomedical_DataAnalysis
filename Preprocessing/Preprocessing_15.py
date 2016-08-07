@@ -1,18 +1,14 @@
 #Input the OfficeRecords_30TopConditionFeatures and for each of the condition column enter 0 if NULL/empty
 
 import pandas as pd
-from pandas import DataFrame
-import datetime
-import pandas.io.data
-import csv
-import numpy as np
-import matplotlib.pyplot as plt
 
-fileInput = 'C:\\Users\\Moumita\\Dropbox\\Research_Phase2\\KidneyData\\data\\records_date\\HospitalRecords_105TopConditionFeatures.csv'
-fileOutput = 'C:\\Users\\Moumita\\Dropbox\\Research_Phase2\\KidneyData\\data\\records_date\\HospitalRecords_105TopConditionFeatures_fill0.csv'
+#fileInput = 'C:\\Users\\Moumita\\Dropbox\\Research_Phase2\\KidneyData\\data\\records_date\\HospitalRecords_105TopConditionFeatures.csv'
+fileInput = 'C:\\Users\\Moumita\\Google Drive\\Research_Phase2\\Diagnosis_Analysis\\Analysis_hospitalRecordSet' \
+            '\\FrequencyListOfConditionsInHospitalRecordSet\\HospitalRecordSetWithConditionFeatures.csv'
+fileOutput = 'C:\\Users\\Moumita\\Google Drive\\Research_Phase2\\Diagnosis_Analysis\\Analysis_hospitalRecordSet\\FrequencyListOfConditionsInHospitalRecordSet\\HospitalRecordSetWithConditionFeatures_final.csv'
 
 data = pd.read_csv(fileInput,delimiter=',')
-features_train = list(data.columns[11:])
+features_train = list(data.columns[8:])
 X = data[features_train]
 
 X.fillna('', inplace=True)
