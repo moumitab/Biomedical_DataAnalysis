@@ -1,17 +1,19 @@
-#Input the OfficeRecords_30TopConditionFeatures and for each of the condition column enter 0 if NULL/empty
+#Input the records with ones and empty cells and replace with 1 and 0
+#STEP 2 in comorbidity preprocessing
 
 import pandas as pd
 
 #fileInput = 'C:\\Users\\Moumita\\Dropbox\\Research_Phase2\\KidneyData\\data\\records_date\\HospitalRecords_105TopConditionFeatures.csv'
-fileInput = 'C:\\Users\\Moumita\\Google Drive\\Research_Phase2\\Diagnosis_Analysis\\Analysis_hospitalRecordSet' \
-            '\\FrequencyListOfConditionsInHospitalRecordSet\\HospitalRecordSetWithConditionFeatures.csv'
-fileOutput = 'C:\\Users\\Moumita\\Google Drive\\Research_Phase2\\Diagnosis_Analysis\\Analysis_hospitalRecordSet\\FrequencyListOfConditionsInHospitalRecordSet\\HospitalRecordSetWithConditionFeatures_final.csv'
+
+fileInput = '/Users/moumitabhattacharya/Desktop/Research_Phase2/KidneyData/data/updatedData/office_records_448_codes.csv'
+#fileInput = '/Users/moumitabhattacharya/Desktop/Research_Phase2/Diagnosis_Analysis/Gender_Comorbidity_study/Male/Office_20160303_Male_BOW.csv'
+fileOutput = '/Users/moumitabhattacharya/Desktop/Research_Phase2/KidneyData/data/updatedData/office_records_448_codes_no_NA.csv'
 
 data = pd.read_csv(fileInput,delimiter=',')
-features_train = list(data.columns[8:])
+features_train = list(data.columns)
 X = data[features_train]
 
-X.fillna('', inplace=True)
+X.fillna(0, inplace=True)
 data[features_train] = X
 
 data.to_csv(fileOutput)
